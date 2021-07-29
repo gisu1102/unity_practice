@@ -3,66 +3,66 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-///Å°º¸µå ¸¶¿ì½º·Î ÀÌµ¿½ÃÅ°±â
+///í‚¤ë³´ë“œ ë§ˆìš°ìŠ¤ë¡œ ì´ë™ì‹œí‚¤ê¸°
 /// </summary>
 
 
 public class Key_Mouse : MonoBehaviour
 {
-  
+  //
     // Update is called once per frame
     void Start()
     {
-        //Input //°ÔÀÓ ³» ÀÔ·ÂÀ» °ü¸®ÇÏ´Â Å¬·¡½º // 
+        //Input //ê²Œì„ ë‚´ ì…ë ¥ì„ ê´€ë¦¬í•˜ëŠ” í´ë˜ìŠ¤ // 
         /*
-        if (Input.anyKeyDown) //¾Æ¹« ÀÔ·ÂÀ» ÃÖÃÊ·Î ¹ŞÀ» ¶§ true boolÀÓ
-            Debug.Log("ÇÃ·¹ÀÌ¾î°¡ ¾Æ¹« Å°¸¦ ´­·¶½À´Ï´Ù");
+        if (Input.anyKeyDown) //ì•„ë¬´ ì…ë ¥ì„ ìµœì´ˆë¡œ ë°›ì„ ë•Œ true boolì„
+            Debug.Log("í”Œë ˆì´ì–´ê°€ ì•„ë¬´ í‚¤ë¥¼ ëˆŒë €ìŠµë‹ˆë‹¤");
 
         if (Input.anyKey)
-            Debug.Log("ÇÃ·¹ÀÌ¾î°¡ ¾Æ¹«Å°¸¦ ´©¸£°íÀÖ½À´Ï´Ù.");
+            Debug.Log("í”Œë ˆì´ì–´ê°€ ì•„ë¬´í‚¤ë¥¼ ëˆ„ë¥´ê³ ìˆìŠµë‹ˆë‹¤.");
 
-        //Down-´­·¶À» ¶§  Stay-´©¸£°í ÀÖÀ» ¶§   up-¶ª ¶§
-        if (Input.GetKeyDown(KeyCode.Return))//Return = ¿£ÅÍ
-            Debug.Log("¾ÆÀÌÅÛ ±¸¸Å.");
+        //Down-ëˆŒë €ì„ ë•Œ  Stay-ëˆ„ë¥´ê³  ìˆì„ ë•Œ   up-ë•” ë•Œ
+        if (Input.GetKeyDown(KeyCode.Return))//Return = ì—”í„°
+            Debug.Log("ì•„ì´í…œ êµ¬ë§¤.");
 
         if (Input.GetKey(KeyCode.LeftArrow))
-            Debug.Log("¿ŞÂÊÀ¸·Î ÀÌµ¿Áß");
+            Debug.Log("ì™¼ìª½ìœ¼ë¡œ ì´ë™ì¤‘");
 
         if (Input.GetKeyUp(KeyCode.RightArrow))
-            Debug.Log("¿À¸¥ÂÊ ÀÌµ¿ ¸ØÃã.");
+            Debug.Log("ì˜¤ë¥¸ìª½ ì´ë™ ë©ˆì¶¤.");
 
 
-        //¸¶¿ì½º
-        if (Input.GetMouseButtonDown(0))// 0=¸¶¿ì½º ¿ŞÂÊ 1=¸¶¿ì½º ¿À¸¥ÂÊ
-            Debug.Log("¹Ì»çÀÏ ¹ß»ç.");
+        //ë§ˆìš°ìŠ¤
+        if (Input.GetMouseButtonDown(0))// 0=ë§ˆìš°ìŠ¤ ì™¼ìª½ 1=ë§ˆìš°ìŠ¤ ì˜¤ë¥¸ìª½
+            Debug.Log("ë¯¸ì‚¬ì¼ ë°œì‚¬.");
 
         if (Input.GetMouseButton(0))
-            Debug.Log("¹Ì»çÀÏ ±â¸ğÀ¸´Â Áß");
+            Debug.Log("ë¯¸ì‚¬ì¼ ê¸°ëª¨ìœ¼ëŠ” ì¤‘");
 
         if (Input.GetMouseButtonUp(0))
-            Debug.Log("½´ÆÛ ¹Ì»çÀÏ ¹ß»ç.");
+            Debug.Log("ìŠˆí¼ ë¯¸ì‚¬ì¼ ë°œì‚¬.");
 
-        //Á¡ÇÁ
+        //ì í”„
         if (Input.GetButtonDown("Jump"))
-            Debug.Log("Á¡ÇÁ!!!");
+            Debug.Log("ì í”„!!!");
 
-        //È¾ ÀÌµ¿  Á¾ ÀÌµ¿
+        //íš¡ ì´ë™  ì¢… ì´ë™
 
         if (Input.GetButton("Horizontal"))
         {
-            Debug.Log("È¾ ÀÌµ¿Áß..." + Input.GetAxisRaw("Horizontal"));
+            Debug.Log("íš¡ ì´ë™ì¤‘..." + Input.GetAxisRaw("Horizontal"));
         }
         if (Input.GetButton("Vertical"))
         {
-            Debug.Log("Á¾ ÀÌµ¿Áß..." + Input.GetAxisRaw("Vertical"));
+            Debug.Log("ì¢… ì´ë™ì¤‘..." + Input.GetAxisRaw("Vertical"));
         }
         */
 
 
-        //¿ÀºêÁ§Æ®´Â º¯¼ö transformÀ» Ç×»ó °¡Áö°í ÀÖÀ½ (ÃÊ±âÈ­ ¿Ï·áµÈ »óÅÂ)
-        //translate º¤ÅÍ °ªÀ» ÇöÀç °ª¿¡ ´õÇÏ´Â ÇÔ¼ö
-        //int number = 4; //½ºÄ®¶ó °ª
-        Vector3 vec = new Vector3(5, 0, 0); //ÃÊ±âÈ­  º¤ÅÍ °ª ³»°¡¾Æ´Â ¼öÇĞº¤ÅÍ ¸ÂÀ½ ¤·¤·
+        //ì˜¤ë¸Œì íŠ¸ëŠ” ë³€ìˆ˜ transformì„ í•­ìƒ ê°€ì§€ê³  ìˆìŒ (ì´ˆê¸°í™” ì™„ë£Œëœ ìƒíƒœ)
+        //translate ë²¡í„° ê°’ì„ í˜„ì¬ ê°’ì— ë”í•˜ëŠ” í•¨ìˆ˜
+        //int number = 4; //ìŠ¤ì¹¼ë¼ ê°’
+        Vector3 vec = new Vector3(5, 0, 0); //ì´ˆê¸°í™”  ë²¡í„° ê°’ ë‚´ê°€ì•„ëŠ” ìˆ˜í•™ë²¡í„° ë§ìŒ ã…‡ã…‡
 
         transform.Translate(vec);
 
@@ -73,9 +73,9 @@ public class Key_Mouse : MonoBehaviour
     void Update()
     {
         Vector3 vec = new Vector3(
-            Input.GetAxis("Horizontal"),    //Áß°£°ª
-            Input.GetAxisRaw("Vertical"),   //´ÜÀ§°¡ 1
-            0); //ÃÊ±âÈ­  º¤ÅÍ °ª ³»°¡¾Æ´Â ¼öÇĞº¤ÅÍ ¸ÂÀ½ ¤·¤·
+            Input.GetAxis("Horizontal"),    //ì¤‘ê°„ê°’
+            Input.GetAxisRaw("Vertical"),   //ë‹¨ìœ„ê°€ 1
+            0); //ì´ˆê¸°í™”  ë²¡í„° ê°’ ë‚´ê°€ì•„ëŠ” ìˆ˜í•™ë²¡í„° ë§ìŒ ã…‡ã…‡
 
         transform.Translate(vec);
     }

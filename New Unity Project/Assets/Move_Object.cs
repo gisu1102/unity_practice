@@ -15,52 +15,52 @@ public class Move_Object : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //1.MoveTowards (´Ü¼ø µî¼Ó ÀÌµ¿)
+        //1.MoveTowards (ë‹¨ìˆœ ë“±ì† ì´ë™)
         /*
         transform.position =
             Vector3.MoveTowards(
                 transform.position,
                 target,
-                1f);      //¸Å°³º¯¼ö (ÇöÀçÀ§Ä¡,¸ñÇ¥À§Ä¡,¼Óµµ)·Î ±¸¼º ÇÔ¼ö
+                1f);      //ë§¤ê°œë³€ìˆ˜ (í˜„ìž¬ìœ„ì¹˜,ëª©í‘œìœ„ì¹˜,ì†ë„)ë¡œ êµ¬ì„± í•¨ìˆ˜
         */
 
-        //2.SmoothDamp (¹Ì²ô·¯ÁöµíÀÌ °¨¼Ó ÀÌµ¿)
+        //2.SmoothDamp (ë¯¸ë„ëŸ¬ì§€ë“¯ì´ ê°ì† ì´ë™)
         Vector3 velo = Vector3.zero;
         /*
         transform.position =
             Vector3.SmoothDamp(transform.position,
                 target,
-                ref velo, //ÂüÁ¶ Á¢±Ù -> ½Ç½Ã°£À¸·Î ¹Ù²î´Â °ª Àû¿ë °¡´É ; reference 
+                ref velo, //ì°¸ì¡° ì ‘ê·¼ -> ì‹¤ì‹œê°„ìœ¼ë¡œ ë°”ë€ŒëŠ” ê°’ ì ìš© ê°€ëŠ¥ ; reference 
                 0.1f
-                );  //¸¶Áö¸· ¸Å°³º¯¼ö¿¡ ¹Ýºñ·ÊÇÏ¿© ¼ÓµµÁõ°¡
+                );  //ë§ˆì§€ë§‰ ë§¤ê°œë³€ìˆ˜ì— ë°˜ë¹„ë¡€í•˜ì—¬ ì†ë„ì¦ê°€
         */
 
-        //3.Lerp (¼±Çü º¸°£ ÀÌµ¿), SmoothDamp º¸´Ù °¨¼Ó½Ã°£ÀÌ ±è
+        //3.Lerp (ì„ í˜• ë³´ê°„ ì´ë™), SmoothDamp ë³´ë‹¤ ê°ì†ì‹œê°„ì´ ê¹€
         /*
         transform.position =
         Vector3.Lerp(
             transform.position,
             target,
             0.1f
-            );  //movetowards ¶û °°Àº ¸ÅÄ¿´ÏÁò
+            );  //movetowards ëž‘ ê°™ì€ ë§¤ì»¤ë‹ˆì¦˜
         */
 
-        //4. SLerp (±¸¸é ¼±Çü º¸°£ ÀÌµ¿) ,È£¸¦ ±×¸®¸ç ÀÌµ¿ ;Æ÷¹°¼± ÀÌµ¿
-        /*
+        //4. SLerp (êµ¬ë©´ ì„ í˜• ë³´ê°„ ì´ë™) ,í˜¸ë¥¼ ê·¸ë¦¬ë©° ì´ë™ ;í¬ë¬¼ì„  ì´ë™
+        
          transform.position =
             Vector3.Slerp(
                 transform.position,
                 target,
                 0.01f); 
         
-        */
+        
 
-        //Time.deltaTime - ÀÌÀü ÇÁ·¹ÀÓ ¿Ï·á±îÁö °É¸° ½Ã°£ Á¶Àý 
-        //ÇÁ·¹ÀÓ°ªÀÌ Å©¸é °ªÀÌ ÀÛ°í ÇÁ·¹ÀÓ°ªÀÌ ÀÛÀ¸¸é °ªÀÌ Å­
-        //ÄÄÇ»ÅÍ ¼º´É¿¡ µû¶ó ¿Â¶óÀÎ»ó¿¡¼­ ÇÁ·¹ÀÓÀÌ ´Ù¸£±â ¶§¹®¿¡ Á¶Àý ÇÊ¿ä
-        //Translate :º¤ÅÍ¿¡ °öÇÏ±â
+        //Time.deltaTime - ì´ì „ í”„ë ˆìž„ ì™„ë£Œê¹Œì§€ ê±¸ë¦° ì‹œê°„ ì¡°ì ˆ 
+        //í”„ë ˆìž„ê°’ì´ í¬ë©´ ê°’ì´ ìž‘ê³  í”„ë ˆìž„ê°’ì´ ìž‘ìœ¼ë©´ ê°’ì´ í¼
+        //ì»´í“¨í„° ì„±ëŠ¥ì— ë”°ë¼ ì˜¨ë¼ì¸ìƒì—ì„œ í”„ë ˆìž„ì´ ë‹¤ë¥´ê¸° ë•Œë¬¸ì— ì¡°ì ˆ í•„ìš”
+        //Translate :ë²¡í„°ì— ê³±í•˜ê¸°
         //transform.Translate(Vec*Time.deltaTime)
-        //VectorÇÔ¼ö : ½Ã°£ ¸Å°³º¯¼ö¿¡ °öÇÏ±â
+        //Vectorí•¨ìˆ˜ : ì‹œê°„ ë§¤ê°œë³€ìˆ˜ì— ê³±í•˜ê¸°
         //Vector3.Lerp(vec1,vec2,T*Time.deltaTime)
         
 
